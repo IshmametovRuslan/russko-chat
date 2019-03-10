@@ -1,7 +1,9 @@
 $font-stack: Helavica, sans-serif;
+$font-title: Srisakdi, cursive;
 $primary-color: #000;
 $title-color: #f2f2f2;
 $bg-color-header: #6acd67;
+@import url('https://fonts.googleapis.com/css?family=Srisakdi');
 
 * {
   margin: 0;
@@ -14,6 +16,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header {
   width: 100%;
   max-width: 1152px;
@@ -21,9 +24,40 @@ header {
   background-color: $bg-color-header;
   margin: auto;
   border-radius: 5px;
-  .page-title {
-    color: $title-color;
-    font-size: 80px;
+  .page-title-block {
+    display: flex;
     float: left;
+    height: 100%;
+    padding-left: 40px;
+    font-weight: bold;
+    .page-title {
+      color: $title-color;
+      font-family: $font-title;
+      font-size: 3.7em;
+      margin: auto;
+    }
+  }
+  .user-block {
+    float: right;
+    height: 100%;
+    display: flex;
+    div {
+      float: left;
+      padding: 10px;
+      margin: auto;
+    }
+    .user-avatar {
+      height: 40px;
+      width: 40px;
+      background-color: black;
+      background-image: url("https://up.gc-img.net/post_img_web/2018/02/js6TA8tKuPXHptg.jpeg");
+      background-position: center;
+      background-size: cover;
+    }
+    .user-name {
+      font-size: 1.5em;
+      color: $title-color;
+      text-decoration: underline;
+    }
   }
 }

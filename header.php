@@ -10,6 +10,11 @@
 </head>
 <body>
 <header>
-	<div class="page-title">Russko-Chat</div>
-	<div class="user-block"></div>
+	<div class="page-title-block">
+		<div class="page-title">Russko-Chat</div>
+	</div>
+	<div class="user-block">
+		<div class="user-avatar"></div>
+		<div class="user-name">Russko</div>
+	</div>
 </header>

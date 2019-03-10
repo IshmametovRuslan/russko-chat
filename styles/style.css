@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Srisakdi");
 * {
   margin: 0;
   padding: 0; }
@@ -15,9 +16,35 @@ header {
   background-color: #6acd67;
   margin: auto;
   border-radius: 5px; }
-  header .page-title {
-    color: #f2f2f2;
-    font-size: 80px;
-    float: left; }
+  header .page-title-block {
+    display: flex;
+    float: left;
+    height: 100%;
+    padding-left: 40px;
+    font-weight: bold; }
+    header .page-title-block .page-title {
+      color: #f2f2f2;
+      font-family: Srisakdi, cursive;
+      font-size: 3.7em;
+      margin: auto; }
+  header .user-block {
+    float: right;
+    height: 100%;
+    display: flex; }
+    header .user-block div {
+      float: left;
+      padding: 10px;
+      margin: auto; }
+    header .user-block .user-avatar {
+      height: 40px;
+      width: 40px;
+      background-color: black;
+      background-image: url("https://up.gc-img.net/post_img_web/2018/02/js6TA8tKuPXHptg.jpeg");
+      background-position: center;
+      background-size: cover; }
+    header .user-block .user-name {
+      font-size: 1.5em;
+      color: #f2f2f2;
+      text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */
