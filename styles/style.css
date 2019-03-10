@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 100% Helavica, sans-serif;
+  color: #000;
+  margin: 0;
+  padding: 0; }
+
+header {
+  width: 100%;
+  max-width: 1152px;
+  height: 100px;
+  background-color: #6acd67;
+  margin: auto;
+  border-radius: 5px; }
+  header .page-title {
+    color: #f2f2f2;
+    font-size: 80px;
+    float: left; }
+
+/*# sourceMappingURL=style.css.map */

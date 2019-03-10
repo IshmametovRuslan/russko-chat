@@ -1,0 +1,29 @@
+$font-stack: Helavica, sans-serif;
+$primary-color: #000;
+$title-color: #f2f2f2;
+$bg-color-header: #6acd67;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+}
+header {
+  width: 100%;
+  max-width: 1152px;
+  height: 100px;
+  background-color: $bg-color-header;
+  margin: auto;
+  border-radius: 5px;
+  .page-title {
+    color: $title-color;
+    font-size: 80px;
+    float: left;
+  }
+}
