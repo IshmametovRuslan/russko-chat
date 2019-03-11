@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 11.03.2019
- * Time: 20:51
- */
+
+session_start();
+
+unset($_SESSION['login']);
+unset($_SESSION['id']);
+
+header("location: index.php");
+?>

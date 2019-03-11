@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,20 +8,27 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="css/style.css">
 	<title></title>
+
 </head>
 <body>
+
 <div class="page">
 	<?php
-	session_start();
+
 	if ( ! isset( $_SESSION['login'] ) && ! isset( $_SESSION['id'] ) ) {
 		?>
 		<div class="reg-form-block">
 			<form action="register.php" id="reg-form" method="post">
 				<h4>Зарегестрируйтесь</h4>
+				<lable>Логин:</lable>
 				<input type="text" name="login">
+				<lable>Пароль:</lable>
 				<input type="password" name="password">
+				<lable>Имя:</lable>
 				<input type="text" name="name">
+				<lable>Фамилия:</lable>
 				<input type="text" name="surname">
+				<lable>Город:</lable>
 				<input type="text" name="city">
 				<input type="submit" value="Зарегестрироваться">
 			</form>
@@ -28,7 +36,9 @@
 		<div class="auth-form-block">
 			<form action="login.php" method="post">
 				<h4>Вход</h4>
+				<lable>Логин:</lable>
 				<input type="text" name="login">
+				<lable>Пароль:</lable>
 				<input type="password" name="password">
 				<input type="submit" value="Вход">
 			</form>
@@ -38,7 +48,7 @@
 	}
 	if ( isset( $_SESSION['login'] ) && isset( $_SESSION['id'] ) ) {
 
-		include 'config.php';
+		include 'db.php';
 		$user      = $_SESSION['login'];
 		$res       = mysqli_query( "SELECT * FROM `users` WHERE `login` = '$user'" );
 		$user_data = mysqli_fetch_array( $res ); ?>
