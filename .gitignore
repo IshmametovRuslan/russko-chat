@@ -3,6 +3,7 @@ workspace.xml
 config.php
 .idea/workspace.xml
 .idea/watcherTasks.xml
+.idea\watcherTasks.xml
 .idea\workspace.xml
 images/users
 images\users
