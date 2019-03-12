@@ -5,7 +5,7 @@ if ( isset( $_POST['login'] ) && isset( $_POST['password'] ) ) {
 
 	// Все данные записываем в переменные
 	$login    = htmlspecialchars( trim( $_POST['login'] ) );
-	$password = htmlspecialchars( trim( $_POST['password'] ) );
+	$password = md5( htmlspecialchars( trim( $_POST['password'] ) ) );
 	$name     = htmlspecialchars( trim( $_POST['name'] ) );
 	$surname  = htmlspecialchars( trim( $_POST['surname'] ) );
 	$city     = htmlspecialchars( trim( $_POST['city'] ) );
@@ -18,16 +18,16 @@ if ( isset( $_POST['login'] ) && isset( $_POST['password'] ) ) {
 
 	//Подключаем файл БД
 	include 'db.php';
-	echo $password;
+
 	//Делаем запрос к БД
-	$res  = mysqli_query( $db_connect,"SELECT `login` FROM `users` WHERE `login` = '$login'" );
+	$res  = mysqli_query( $db_connect, "SELECT `login` FROM `users` WHERE `login` = '$login'" );
 	$data = mysqli_fetch_array( $res );
 
 	//Проверяем существует ли такой логин
 	if ( ! empty( $data['login'] ) ) {
 		die( 'Такой логин уже существует!' );
 	}
-	echo $password;
+
 	//Проверяем длину пароля
 	if ( strlen( $password ) < 7 ) {
 		echo $password;

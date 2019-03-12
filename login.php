@@ -4,9 +4,9 @@ if ( isset( $_POST['login'] ) && isset( $_POST['password'] ) ) {
 	include 'db.php';
 
 	$login    = htmlspecialchars( trim( $_POST['login'] ) );
-	$password = htmlspecialchars( trim( $_POST['password'] ) );
+	$password = md5( htmlspecialchars( trim( $_POST['password'] ) ) );
 
-	$res  = mysqli_query( "SELECT * FROM `users` WHERE `login`='$login'" );
+	$res  = mysqli_query( $db_connect,"SELECT * FROM `users` WHERE `login`='$login'" );
 	$data = mysqli_fetch_array( $res );
 
 	if ( empty( $data['login'] ) ) {
@@ -22,5 +22,5 @@ if ( isset( $_POST['login'] ) && isset( $_POST['password'] ) ) {
 	$_SESSION['login'] = $data['login'];
 	$_SESSION['id']    = $data['id'];
 
-	header("location: index.php");
+	header( "location: index.php" );
 }

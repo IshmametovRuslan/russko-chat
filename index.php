@@ -50,7 +50,7 @@
 
 		include 'db.php';
 		$user      = $_SESSION['login'];
-		$res       = mysqli_query( "SELECT * FROM `users` WHERE `login` = '$user'" );
+		$res       = mysqli_query( $db_connect, "SELECT * FROM `users` WHERE `login` = '$user'" );
 		$user_data = mysqli_fetch_array( $res ); ?>
 		<div class="user-data">
 			<p>Ваш логин: <b><?php echo $user_data['login']; ?></b></p>
