@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -60,6 +60,7 @@
 			<p><a href="exit.php">Выход</a></p>
 		</div>
 		<?php
+		include 'chat.php';
 	}
 	?>
 </div>

@@ -13,3 +13,9 @@
     margin: auto;
   }
 }
+#messages {
+  width: 300px;
+  height: 150px;
+  overflow: auto;
+  border: 1px solid grey;
+}
