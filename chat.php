@@ -1,5 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <table>
 	<tr>
@@ -9,21 +7,14 @@
 	</tr>
 	<tr>
 		<td>
-			<form action="javascript:send();">
+			<form action="">
 				<input type="text" id="mess_to_send">
-				<input type="button" id="sendBtn" value="Отправить">
+				<input type="button" id="sendBtn" onclick="send();" value="Отправить">
 			</form>
 		</td>
 	</tr>
 </table>
 <script type="text/javascript">
-
-		$("#sendBtn").click(
-			function(){
-				send();
-				return false;
-			}
-		);
 
 
 	function send() {
@@ -33,8 +24,8 @@
 		$.ajax( {
 			type : "POST",
 			url : "add_mess.php",
-			data : "mess=" + mess,
-			success : function ( ) {
+			data : { mess : mess },
+			success : function () {
 				load_messages();
 
 				$( "#mess_to_send" ).val( '' );
@@ -59,6 +50,6 @@
 <script>
 	load_messages();
 
-	setInterval(load_messages, 3000);
+	setInterval( load_messages, 3000 );
 
 </script>
