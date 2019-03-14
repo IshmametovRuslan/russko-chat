@@ -4,8 +4,11 @@
 
 .page {
   width: 100%;
+  max-width: 1152px;
   height: 100%;
-  display: flex; }
+  margin: auto;
+  display: flex;
+  flex-direction: column; }
   .page .reg-form-block,
   .page .auth-form-block,
   .page .user-data {

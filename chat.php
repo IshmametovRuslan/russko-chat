@@ -20,7 +20,6 @@
 	function send() {
 		let mess = $( "#mess_to_send" ).val();
 
-
 		$.ajax( {
 			type : "POST",
 			url : "add_mess.php",
