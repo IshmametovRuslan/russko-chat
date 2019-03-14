@@ -51,7 +51,6 @@ function getRootPath() {
 
 	return $path;
 }
-
 getRootPath();
 
 /**
@@ -185,7 +184,6 @@ function viewMsg() {
 		}
 	}
 }
-
 viewMsg();
 
 

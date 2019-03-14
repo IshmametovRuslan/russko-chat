@@ -17,8 +17,8 @@
 	if ( ! isset( $_SESSION['login'] ) && ! isset( $_SESSION['id'] ) ) {
 		?>
 		<div class="link">
-			<a href="?p=login">Вход</a>
-			<a href="?p=register">Регистрация</a>
+				<a href="?p=login">Вход</a>
+				<a href="?p=register">Регистрация</a>
 		</div>
 		<?php
 	}

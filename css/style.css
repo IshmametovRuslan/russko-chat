@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 * {
   margin: 0;
   padding: 0; }
+
+body {
+  background-image: url("/img/bg_img.png"); }
 
 .page {
   width: 100%;
@@ -9,6 +13,22 @@
   margin: auto;
   display: flex;
   flex-direction: column; }
+  .page .link {
+    display: flex;
+    justify-content: flex-end; }
+    .page .link a {
+      width: 150px;
+      height: 50px;
+      display: block;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      text-decoration: none;
+      color: #e2e9e7;
+      background-color: darkslateblue;
+      border-radius: 5px;
+      margin: 5px;
+      line-height: 2.3; }
   .page .reg-form-block,
   .page .auth-form-block,
   .page .user-data {
