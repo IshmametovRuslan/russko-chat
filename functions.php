@@ -1,6 +1,5 @@
 <?php
-include 'db.php';
-
+include "db.php";
 /**
  * Функция определения запрошенной страницы
  *
@@ -83,9 +82,6 @@ function regUser() {
 			die( 'Заполните все поля!' );
 		}
 
-		//Подключаем файл БД
-		include 'db.php';
-
 		//Делаем запрос к БД
 		$res  = mysqli_query( $db_connect, "SELECT `login` FROM `users` WHERE `login` = '$login'" );
 		$data = mysqli_fetch_array( $res );
@@ -122,11 +118,9 @@ regUser();
  */
 function userLogin() {
 
-	if ( isset( $_POST['login'] ) && isset( $_POST['password'] ) && isset( $_POST['action'] ) && $_POST['action'] == 'login') {
+	if ( isset( $_POST['login'] ) && isset( $_POST['password'] ) && isset( $_POST['action'] ) && $_POST['action'] == 'login' ) {
 
 		global $db_connect;
-
-		include 'db.php';
 
 		$login    = htmlspecialchars( trim( $_POST['login'] ) );
 		$password = md5( htmlspecialchars( trim( $_POST['password'] ) ) );
@@ -150,4 +144,49 @@ function userLogin() {
 		header( "location: index.php" );
 	}
 }
+
 userLogin();
+
+/**
+ * Функция добавления сообщения в БД
+ */
+function addMsg() {
+
+	global $db_connect;
+
+	if ( isset( $_POST['mess'] ) && $_POST['mess'] != '' && $_POST['mess'] != ' ' ) {
+
+		session_start();
+
+		$mess  = $_POST['mess'];
+		$login = $_SESSION['login'];
+		$res   = mysqli_query( $db_connect, "INSERT INTO `messages` (`login`,`message`) VALUES ('$login','$mess')" );
+
+	}
+
+	return $res;
+}
+
+addMsg();
+
+/**
+ * Функция вывода сообщений на экран
+ *
+ */
+function viewMsg() {
+	if ( $_POST && $_POST['res'] == 'ok' ) {
+
+		global $db_connect;
+
+		$res = mysqli_query( $db_connect, "SELECT * FROM `messages` ORDER BY `id`" );
+
+		while ( $d = mysqli_fetch_array( $res ) ) {
+			echo "<p><b>" . $d['login'] . ": </b><span>" . $d['message'] . "</span></p>";
+		}
+	}
+}
+
+viewMsg();
+
+
+
