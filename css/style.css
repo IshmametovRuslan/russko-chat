@@ -36,7 +36,7 @@ body {
   .page .chat-block {
     width: 100%;
     display: flex;
-    justify-content: flex-end; }
+    justify-content: center; }
     .page .reg-form-block .user-data,
     .page .auth-form-block .user-data,
     .page .chat-block .user-data {
@@ -74,9 +74,9 @@ body {
       margin-top: 20px;
       font-size: 2em;
       padding-left: 20px; }
-    .page .reg-form-block #send-btn,
-    .page .auth-form-block #send-btn,
-    .page .chat-block #send-btn {
+    .page .reg-form-block #send-msg-btn,
+    .page .auth-form-block #send-msg-btn,
+    .page .chat-block #send-msg-btn {
       width: 19%;
       height: 50px;
       border: none;
@@ -85,9 +85,9 @@ body {
       background-color: #418649;
       color: #e2e9e7;
       font-size: 1.3em; }
-      .page .reg-form-block #send-btn:hover,
-      .page .auth-form-block #send-btn:hover,
-      .page .chat-block #send-btn:hover {
+      .page .reg-form-block #send-msg-btn:hover,
+      .page .auth-form-block #send-msg-btn:hover,
+      .page .chat-block #send-msg-btn:hover {
         cursor: pointer; }
   .page .reg-form-block p,
   .page .reg-form-block h3,
@@ -103,22 +103,25 @@ body {
   .page .reg-form-block h6,
   .page .auth-form-block h6 {
     color: #e25f5f; }
-  .page .reg-form-block input,
-  .page .auth-form-block input {
-    width: 100%;
-    height: 50px;
-    font-size: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-style: none;
-    border-radius: 5px;
-    padding: 5px; }
-    .page .reg-form-block input#send-btn,
-    .page .auth-form-block input#send-btn {
-      background-color: #418649;
-      color: #e2e9e7; }
-      .page .reg-form-block input#send-btn:hover,
-      .page .auth-form-block input#send-btn:hover {
-        cursor: pointer; }
+  .page .reg-form-block form,
+  .page .auth-form-block form {
+    width: 30%; }
+    .page .reg-form-block form input,
+    .page .auth-form-block form input {
+      width: 100%;
+      height: 50px;
+      font-size: 100%;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border-style: none;
+      border-radius: 5px;
+      padding: 5px; }
+      .page .reg-form-block form input#send-btn,
+      .page .auth-form-block form input#send-btn {
+        background-color: #418649;
+        color: #e2e9e7; }
+        .page .reg-form-block form input#send-btn:hover,
+        .page .auth-form-block form input#send-btn:hover {
+          cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

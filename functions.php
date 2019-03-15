@@ -130,7 +130,6 @@ function regUser() {
 		//Вносим данные пользователя в БД
 		$query  = "INSERT INTO `users` (`login`,`password`,`name`,`surname`,`city`) VALUES ('$login','$password','$name','$surname','$city')";
 		$result = mysqli_query( $db_connect, $query );
-		global $text_alarm;
 
 		if ( $result == true ) {
 			header( "location: ?p=login" );

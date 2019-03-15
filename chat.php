@@ -9,7 +9,7 @@
 			<td>
 				<form action="">
 					<input type="text" id="mess-to-send">
-					<input type="button" id="send-btn" onclick="send();" value="Отправить">
+					<input type="button" id="send-msg-btn" onclick="send();" value="Отправить">
 				</form>
 			</td>
 		</tr>
