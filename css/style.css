@@ -4,7 +4,8 @@
   padding: 0; }
 
 body {
-  background-image: url("/img/bg_img.png"); }
+  background-image: url("/img/bg_img.png");
+  font-family: "Roboto", sans-serif; }
 
 .page {
   width: 100%;
@@ -12,7 +13,8 @@ body {
   height: 100%;
   margin: auto;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 20px 5px; }
   .page .link {
     display: flex;
     justify-content: flex-end; }
@@ -25,19 +27,98 @@ body {
       font-size: 1.3em;
       text-decoration: none;
       color: #e2e9e7;
-      background-color: darkslateblue;
+      background-color: #418649;
       border-radius: 5px;
       margin: 5px;
       line-height: 2.3; }
   .page .reg-form-block,
   .page .auth-form-block,
-  .page .user-data {
-    margin: auto; }
-
-#messages {
-  width: 300px;
-  height: 150px;
-  overflow: auto;
-  border: 1px solid grey; }
+  .page .chat-block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; }
+    .page .reg-form-block .user-data,
+    .page .auth-form-block .user-data,
+    .page .chat-block .user-data {
+      margin: 0 auto;
+      width: 30%;
+      font-size: 1.8em; }
+      .page .reg-form-block .user-data p,
+      .page .auth-form-block .user-data p,
+      .page .chat-block .user-data p {
+        font-size: 0.8em; }
+    .page .reg-form-block .chat-window,
+    .page .auth-form-block .chat-window,
+    .page .chat-block .chat-window {
+      width: 70%; }
+      .page .reg-form-block .chat-window table,
+      .page .auth-form-block .chat-window table,
+      .page .chat-block .chat-window table {
+        width: 100%; }
+        .page .reg-form-block .chat-window table tr #messages,
+        .page .auth-form-block .chat-window table tr #messages,
+        .page .chat-block .chat-window table tr #messages {
+          background-color: azure;
+          width: 100%;
+          height: 500px;
+          overflow: auto;
+          border-radius: 5px;
+          padding: 10px; }
+    .page .reg-form-block #mess-to-send,
+    .page .auth-form-block #mess-to-send,
+    .page .chat-block #mess-to-send {
+      width: 80%;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 2em;
+      padding-left: 20px; }
+    .page .reg-form-block #send-btn,
+    .page .auth-form-block #send-btn,
+    .page .chat-block #send-btn {
+      width: 19%;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      background-color: #418649;
+      color: #e2e9e7;
+      font-size: 1.3em; }
+      .page .reg-form-block #send-btn:hover,
+      .page .auth-form-block #send-btn:hover,
+      .page .chat-block #send-btn:hover {
+        cursor: pointer; }
+  .page .reg-form-block p,
+  .page .reg-form-block h3,
+  .page .reg-form-block h4,
+  .page .reg-form-block h5,
+  .page .reg-form-block h6,
+  .page .auth-form-block p,
+  .page .auth-form-block h3,
+  .page .auth-form-block h4,
+  .page .auth-form-block h5,
+  .page .auth-form-block h6 {
+    text-align: center; }
+  .page .reg-form-block h6,
+  .page .auth-form-block h6 {
+    color: #e25f5f; }
+  .page .reg-form-block input,
+  .page .auth-form-block input {
+    width: 100%;
+    height: 50px;
+    font-size: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px; }
+    .page .reg-form-block input#send-btn,
+    .page .auth-form-block input#send-btn {
+      background-color: #418649;
+      color: #e2e9e7; }
+      .page .reg-form-block input#send-btn:hover,
+      .page .auth-form-block input#send-btn:hover {
+        cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

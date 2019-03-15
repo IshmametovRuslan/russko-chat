@@ -12,6 +12,6 @@
 		<p>Город:</p>
 		<input type="text" name="city">
 		<input type="hidden" name="action" value="registration">
-		<p><input type="submit" name="sendUserData" value="Зарегестрироваться"></p>
+		<p><input type="submit" id="send-btn" name="sendUserData" value="Зарегестрироваться"></p>
 	</form>
 </div>

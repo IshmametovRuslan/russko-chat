@@ -51,12 +51,43 @@ function getRootPath() {
 
 	return $path;
 }
+
 getRootPath();
 
 /**
- *
+ *Функция Запуска сессии
  *
  */
+function addSession() {
+
+	global $db_connect;
+
+	if ( ! isset( $_SESSION['login'] ) && ! isset( $_SESSION['id'] ) ) {
+		?>
+		<div class="link">
+			<a href="?p=login">Вход</a>
+			<a href="?p=register">Регистрация</a>
+		</div>
+		<?php
+	}
+	if ( isset( $_SESSION['login'] ) && isset( $_SESSION['id'] ) ) {
+
+		include 'db.php';
+		$user      = $_SESSION['login'];
+		$res       = mysqli_query( $db_connect, "SELECT * FROM `users` WHERE `login` = '$user'" );
+		$user_data = mysqli_fetch_array( $res ); ?>
+
+		<div class="user-data">
+			<p>Ваш логин: <b><?php echo $user_data['login']; ?></b></p>
+			<p>Ваше имя: <b><?php echo $user_data['name']; ?></b></p>
+			<p>Ваша фамилия: <b><?php echo $user_data['surname']; ?></b></p>
+			<p>Место жительства: <b><?php echo $user_data['city']; ?></b></p>
+			<p><a href="exit.php">Выход</a></p>
+		</div>
+		<?php
+		include 'chat.php';
+	}
+}
 
 /**
  * Функция регистрации пользователя
@@ -99,13 +130,13 @@ function regUser() {
 		//Вносим данные пользователя в БД
 		$query  = "INSERT INTO `users` (`login`,`password`,`name`,`surname`,`city`) VALUES ('$login','$password','$name','$surname','$city')";
 		$result = mysqli_query( $db_connect, $query );
+		global $text_alarm;
 
 		if ( $result == true ) {
-			echo 'Вы успешно зарегестрированы! <a href="index.php">На главную</a>';
+			header( "location: ?p=login" );
 		} else {
 			echo 'Ошибка! ----> ' . mysqli_error();
 		}
-
 	}
 }
 
@@ -180,11 +211,13 @@ function viewMsg() {
 		$res = mysqli_query( $db_connect, "SELECT * FROM `messages` ORDER BY `id`" );
 
 		while ( $d = mysqli_fetch_array( $res ) ) {
-			echo "<p><b>" . $d['login'] . ": </b><span>" . $d['message'] . "</span></p>";
+			echo "<div id='single-message'><p><b>" . $d['login'] . ": </b><span>" . $d['message'] . "</span></p></div>";
 		}
 	}
 }
+
 viewMsg();
+
 
 
 

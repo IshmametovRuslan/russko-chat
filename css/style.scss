@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
 $main_font: 'Roboto', sans-serif;
 $btn_font_clr: #e2e9e7;
+$bg_btn_col: #418649;
+$alarm_col: #e25f5f;
 * {
   margin: 0;
   padding: 0;
 }
+
 body {
   background-image: url("/img/bg_img.png");
+  font-family: $main_font;
 }
+
 .page {
   width: 100%;
   max-width: 1152px;
@@ -15,6 +21,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  padding: 20px 5px;
   .link {
     display: flex;
     justify-content: flex-end;
@@ -27,7 +34,7 @@ body {
       font-size: 1.3em;
       text-decoration: none;
       color: $btn_font_clr;
-      background-color: darkslateblue;
+      background-color: $bg_btn_col;
       border-radius: 5px;
       margin: 5px;
       line-height: 2.3;
@@ -35,14 +42,89 @@ body {
   }
   .reg-form-block,
   .auth-form-block,
-  .user-data {
-    margin: auto;
+  .chat-block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .user-data {
+      margin: 0 auto;
+      width: 30%;
+      font-size: 1.8em;
+      p {
+        font-size: 0.8em;
+      }
+    }
+    .chat-window {
+      width: 70%;
+      table {
+        width: 100%;
+        tr {
 
+          #messages {
+            background-color: azure;
+            width: 100%;
+            height: 500px;
+            overflow: auto;
+            border-radius: 5px;
+            padding: 10px;
+
+          }
+        }
+      }
+    }
+    #mess-to-send {
+      width: 80%;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 2em;
+      padding-left: 20px;
+    }
+    #send-btn {
+      width: 19%;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      background-color: $bg_btn_col;
+      color: $btn_font_clr;
+      font-size: 1.3em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
+  .reg-form-block,
+  .auth-form-block {
+    p,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+    }
+    h6 {
+      color: $alarm_col;
+    }
+    input {
+      width: 100%;
+      height: 50px;
+      font-size: 100%;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border-style: none;
+      border-radius: 5px;
+      padding: 5px;
+      &#send-btn {
+        background-color: $bg_btn_col;
+        color: $btn_font_clr;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
 }
-#messages {
-  width: 300px;
-  height: 150px;
-  overflow: auto;
-  border: 1px solid grey;
-}
+

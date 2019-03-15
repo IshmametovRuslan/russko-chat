@@ -1,5 +1,5 @@
 function send() {
-	let mess = $( "#mess_to_send" ).val();
+	let mess = $( "#mess-to-send" ).val();
 
 	$.ajax( {
 		type : "POST",
@@ -8,7 +8,7 @@ function send() {
 		success : function () {
 			load_messages();
 
-			$( "#mess_to_send" ).val( '' );
+			$( "#mess-to-send" ).val( '' );
 		}
 	} );
 }
